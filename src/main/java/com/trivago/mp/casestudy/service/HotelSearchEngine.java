@@ -1,4 +1,7 @@
-package com.trivago.mp.casestudy;
+package com.trivago.mp.casestudy.service;
+
+import com.trivago.mp.casestudy.model.DateRange;
+import com.trivago.mp.casestudy.model.HotelWithOffers;
 
 import java.util.List;
 

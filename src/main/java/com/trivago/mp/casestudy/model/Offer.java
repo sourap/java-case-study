@@ -1,4 +1,6 @@
-package com.trivago.mp.casestudy;
+package com.trivago.mp.casestudy.model;
+
+import java.util.Objects;
 
 /**
  * A concrete offer from a specific advertiser
@@ -32,5 +34,21 @@ public class Offer {
     @Override
     public String toString() {
         return "Offer{" + "advertiser=" + advertiser + ", priceInEuro=" + priceInEuro + ", cpc=" + cpc + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Offer offer = (Offer) o;
+        return priceInEuro == offer.priceInEuro &&
+                cpc == offer.cpc &&
+                Objects.equals(advertiser, offer.advertiser);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(advertiser, priceInEuro, cpc);
     }
 }

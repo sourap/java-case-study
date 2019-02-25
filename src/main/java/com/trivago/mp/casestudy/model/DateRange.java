@@ -1,4 +1,6 @@
-package com.trivago.mp.casestudy;
+package com.trivago.mp.casestudy.model;
+
+import java.util.Objects;
 
 /**
  * Simple class that specifies the arrival and departure day of a hotel stay. Stored as an integer in the format
@@ -24,5 +26,20 @@ public class DateRange {
     @Override
     public String toString() {
         return "DateRange{" + "startDate=" + startDate + ", endDate=" + endDate + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DateRange dateRange = (DateRange) o;
+        return startDate == dateRange.startDate &&
+                endDate == dateRange.endDate;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(startDate, endDate);
     }
 }
